@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./resources/css/index.css" type="text/css" rel="stylesheet">
+<script src="functions.js"></script>
+</head>
+<body>
+    <nav>
+        <script>
+            function create_new_recipe() {}
+            var img = document.createElement('img');
+            img.src = "./resources/icons/magic.svg";
+            img.width = 30;
+            img.height = 30;
+            var btn = document.createElement('button');
+            btn.appendChild(img);
+            btn.classList.add('buttonM'); // добавляем класс к кнопке
+            btn.addEventListener('click', function() {
+            // code to execute when button is clicked
+            });
+            // add the button to the document
+            document.body.appendChild(btn);
+            // function
+            create_new_recipe();
+        </script>
+        <form>
+            <table class="tabsearch">
+                <tr>
+                    <td class="search"><input type="text" placeholder="Search for recipe..."></td>
+                    <td class="searchbtn"><img src="./resources/icons/search.svg"></td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            function load_recipe_from_database(title) {
+            // code to load recipe from the database using the title
+            // if recipe was loaded successfully, return true
+            // otherwise, return false
+         return true; // or false
+             }
+             // a function to load the recipe from the database
+             var title = "Some Recipe Title"
+             var recipe_loaded = load_recipe_from_database(title); 
+             if (recipe_loaded) { 
+                console.log("Recipe loaded successfully!"); 
+            } else { 
+            console.log("Failed to load recipe..."); 
+        }
+            var img = document.createElement('img');
+            img.src = "./resources/icons/upload.svg";
+            img.width = 30;
+            img.height = 30;
+            var btn = document.createElement('button');
+            btn.appendChild(img);
+            btn.classList.add('button1'); // css
+            btn.addEventListener('click', function() {
+            // code to execute when button is clicked
+            });
+            // add the button to the document
+            document.body.appendChild(btn);
+        </script>
+            <script>
+                document.getElementById("uploadRec").addEventListener("click", function() {
+                var tableRec = document.getElementById("recipeTable");
+                if (tableRec.style.display === "none") {
+                    tableRec.style.display = "flex";
+                } else {
+                    tableRec.style.display = "none";
+                }
+                });
+            </script>
+        </div>
+    </div>
+      </nav>
+<hr>
+<div class="grid-container">
+    <table class="table1">
+        <tr>
+            <th>
+                <h2>Ingredients</h2>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <table id="myTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tr>
+                        <td class="hover">Flour</td>
+                        <td class="hover">500 g</td>
+                    </tr>
+                    <tr>
+                        <td class="hover">Carrot</td>
+                        <td class="hover">1</td>
+                    </tr>
+                </table>
+                <script src="selected.js"></script>
+                <div class="grid-child-purple-footer">
+                    <div class="delete">
+                        <img id="deleteIngrediant" src="./resources/icons/trash.svg" alt="trash icon">
+                        <p> Delete Ingredients</p>
+                    </div>
+                    <div class="add">
+                        <img id="addIngrediant" src="./resources/icons/add.svg" alt="add icon">
+                        <p> Add Ingredients</p>
+                        <script src="addtable.js"></script>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="table2">
+        <tr>
+            <th>
+                <h2>Receipe Name</h2>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div class="flowchart-container">
+                    <div class="flowchart-box">
+                      <text>START</text>
+                    </div>
+                    <div class="vertical-line"></div>
+                    <div class="flowchart-box" id="task-1">
+                      <text>Step 1</text>
+                      <script>
+                        document.getElementById("task-1").addEventListener("click", function() {
+                        var table = document.getElementById("tasktable");
+                        if (table.style.display === "none") {
+                            table.style.display = "flex";
+                        } else {
+                            table.style.display = "none";
+                        }
+                        });
+                      </script>
+                    </div>
+                    <div class="vertical-line"></div>
+                    <div class="flowchart-box" id="task-2">
+                      <text>Step 2</text>
+                    </div>
+                    <div class="vertical-line"></div>
+                    <div class="flowchart-box">
+                      <text>END</text>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="table3" id="tasktable" style="display:none;">
+        <tr>
+            <th>
+                <h2>Tasks</h2>
+            </th>
+        </tr>
+        <tr>
+            <td class="tab3">
+                <table> 
+                    <tr>
+                        <td class="task" >Description</td>
+                        <td class="hover" contenteditable="true">TASK 1</td>
+                    </tr>
+                    <tr>
+                        <td class="task">Cook</td>
+                        <td class="hover" contenteditable="true">COOK 1</td>
+                    </tr>
+                    <tr>
+                        <td class="task">Duration</td>
+                        <td class="hover" contenteditable="true">5 min</td>
+                    </tr>
+                </table>
+                <text class="Ingredients">Ingredients</text>
+                <table class="ingTable">
+                    <tr>
+                        <td class="hover" contenteditable="true" >Flour</td>
+                        <td class="hover" contenteditable="true">500 g</td>
+                    </tr>
+                    <tr>
+                        <td class="hover" contenteditable="true">Carrot</td>
+                        <td class="hover" contenteditable="true">1</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table class="table3" id="recipeTable" style="display:none;">
+        <tr>
+            <th>
+                <h2>Receipes</h2>
+            </th>
+        </tr>
+        <tr>
+            <td class="tab3">
+               
+                <table class="recipeTable"> 
+                    <tr>
+                        <td class="task" >title</td>
+                        <td class="hover" contenteditable="true">NEW RECEIPE</td>
+                    </tr>
+                    <tr>
+                        <td class="task">difficulty</td>
+                        <td class="hover" contenteditable="true">COOK 1</td>
+                    </tr>
+                    <tr>
+                        <td class="task">Duration</td>
+                        <td class="hover" contenteditable="true">5 min</td>
+                    </tr>
+                </table>
+                <div class="grid-child-purple-footer">
+                    <div class="delete">
+                        <img id="deleteIngrediant" src="./resources/icons/cancel.svg" alt="cancel icon">
+                        <p> Cancel Upload</p>
+                    </div>
+                    <div class="add">
+                        <img id="addIngrediant" src="./resources/icons/submit.svg" alt="submit icon">
+                        <p> Submit Upload</p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+  
+</div>
+
+</body>
+</html>
+
+
